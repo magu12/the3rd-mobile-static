@@ -1,0 +1,142 @@
+.hero {
+    width: 100%;
+
+    &__slides,
+    &__slide,
+    &__slide-bg {
+        position: absolute;
+        top: 0%;
+        left: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+
+    &__title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 150%;
+        text-transform: uppercase;
+        position: absolute;
+        z-index: 1;
+        left: 10%;
+        top: 28%;
+
+        span {
+            color: #FFE100;
+        }
+    }
+
+    &__text {
+        position: absolute;
+        top: 35.5%;
+        left: 10%;
+        width: 68%;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.02em;
+    }
+
+    &__slide {
+        top: 0;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 0 20px 20px 0;
+        transition: all .6s ease;
+
+        .logo {
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            z-index: 10;
+        }
+
+        &-bg {
+            top: 0;
+
+            img {
+                width: 101%;
+                height: 101%;
+            }
+        }
+
+        &:nth-child(1) {
+            z-index: 3;
+            left: -11%;
+
+            .hero__title {
+                top: 37.5%;
+                left: 18%;
+            }
+
+            .logo {
+                left: 18%;
+            }
+
+            span {
+                color: #fff;
+            }
+        }
+
+        &:nth-child(2) {
+            left: -8%;
+            z-index: 2;
+            color: #fff;
+
+            .hero__title {
+                font-size: 32px;
+                left: 15%;
+            }
+
+            .logo {
+                left: 15%;
+            }
+        }
+
+        &:nth-child(3) {
+            .hero__title {
+                font-size: 32px;
+            }
+
+            left: -5%;
+            z-index: 1;
+            color: #fff;
+
+            .next {
+                transform: rotate(180deg);
+            }
+        }
+
+        &.hide {
+            left: -100%;
+        }
+
+    }
+
+    .next-slide {
+        position: absolute;
+        top: 50%;
+        right: 7%;
+        z-index: 5;
+        width: 35px;
+        cursor: pointer;
+        svg {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-360deg) scale(0);
+            opacity: 0;
+            visibility: hidden;
+            transition: all .6s ease;
+            &.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translate(-50%, -50%) rotate(0deg)  scale(1);
+                
+            }
+        }
+    }
+
+}
